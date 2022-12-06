@@ -1,0 +1,27 @@
+
+1 . Singleton : 1 nesneden sadece 1 tane yaratılmasını istediğimizde kullanırız. Eager ve lazy gibi implementasyonları vardır.
+Enum kullanarak da kolaylıkla singleton yaratabiliriz.
+
+2. Prototype : Kodumuzu sınıflara bağımlı hale getirmeden varolan nesneleri kopyalamamıza izin veren bir tasarım modelidir.
+Çeşitli şekillerde yapılandırılmış bir dizi nesne yarattığımzda ve konfigüre ettiğiniz gibi bir nesneye ihtiyacınız olduğunda,
+sıfırdan yeni bir nesne oluşturmak yerine bir prototipi klonlayabilirsiniz.
+
+
+3. Factory Method: Nesne oluşturmak için, abstract sınıf ve ya interface tanımlanarak onu implemente eden sınıflarda
+o metot içerisinde nesnenin yaratılmasını sağlayan pattern'dir. Türemiş sınıfların (metodu implemente eden alt sınıf)
+oluşturulacak nesnelerin türünü seçmesine izin verilir.
+
+
+4. Builder Pattern: Karmaşık ve çok veri elemanı olan sınıflarda veya sınıfın default argümanlarının olduğu durumlarda kullanılır.
+Karmaşık objeler adım adım yaratılır.
+Sınıfın içerisinde static bir (nested) class tanımlayarak içerisinde private olarak kapsayan sınıfın nesnesi yaratılır,
+set metotları ile sınıf dışarısından içeride yaratılan nesneneye atamalar yapılır. Daha sonrasında build metodu ile bu
+nesnenin referansı dışarıya verilir.
+
+5. Abstract Factory : Bize genel bir modeli takip eden başka nesneler oluşturmamızı sağlar. Yani somut sınıfları belirtmeden
+ilgili ve bağımlı nesnelerin ailelerini oluşturmak için arayüzler (interface) kullanmamız sağlanır.
+
+
+
+
+

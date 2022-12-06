@@ -1,10 +1,10 @@
-package src.main.java;
+package src.main.java.com.metehanmengen;
 
 import src.main.java.com.metehanmengen.example1.models.*;
 import src.main.java.com.metehanmengen.example1.service.BlogService;
 import src.main.java.com.metehanmengen.example1.service.UserService;
 
-public class Main {
+public class Test1 {
     public static void main(String [] args) {
 
         //User'lar oluşturuldu.

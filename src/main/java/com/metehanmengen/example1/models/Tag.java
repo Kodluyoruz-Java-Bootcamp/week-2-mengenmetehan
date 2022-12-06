@@ -1,4 +1,4 @@
-package src.main.java.com.metehanmengen.example1.model;
+package src.main.java.com.metehanmengen.example1.models;
 
 public class Tag {
     private final String name;

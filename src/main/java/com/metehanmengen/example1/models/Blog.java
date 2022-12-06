@@ -1,8 +1,8 @@
-package src.main.java.com.metehanmengen.example1.model;
+package src.main.java.com.metehanmengen.example1.models;
 
 import java.time.LocalDateTime;
 
-import static src.main.java.com.metehanmengen.example1.model.BlogStatus.DRAFT;
+import static src.main.java.com.metehanmengen.example1.models.BlogStatus.DRAFT;
 
 public class Blog {
     private final String name;

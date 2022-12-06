@@ -1,6 +1,6 @@
 package src.main.java.com.metehanmengen.example1.dao;
 
-import src.main.java.com.metehanmengen.example1.model.Blog;
+import src.main.java.com.metehanmengen.example1.models.Blog;
 
 import java.util.ArrayList;
 import java.util.List;

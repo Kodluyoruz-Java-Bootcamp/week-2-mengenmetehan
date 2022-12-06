@@ -1,4 +1,4 @@
-package src.main.java.com.metehanmengen.example1.model;
+package src.main.java.com.metehanmengen.example1.models;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

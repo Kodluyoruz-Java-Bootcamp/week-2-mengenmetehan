@@ -1,9 +1,8 @@
 package src.main.java.com.metehanmengen.example1.dao;
 
-import src.main.java.com.metehanmengen.example1.model.User;
+import src.main.java.com.metehanmengen.example1.models.User;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class UserRepository {

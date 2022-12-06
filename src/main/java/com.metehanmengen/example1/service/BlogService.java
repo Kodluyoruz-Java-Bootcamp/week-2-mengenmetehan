@@ -1,9 +1,9 @@
 package src.main.java.com.metehanmengen.example1.service;
 
 import src.main.java.com.metehanmengen.example1.dao.BlogRepository;
-import src.main.java.com.metehanmengen.example1.model.Blog;
-import src.main.java.com.metehanmengen.example1.model.BlogStatus;
-import src.main.java.com.metehanmengen.example1.model.User;
+import src.main.java.com.metehanmengen.example1.models.Blog;
+import src.main.java.com.metehanmengen.example1.models.BlogStatus;
+import src.main.java.com.metehanmengen.example1.models.User;
 
 import java.util.List;
 import java.util.stream.Collectors;
