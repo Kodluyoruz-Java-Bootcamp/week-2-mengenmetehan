@@ -1,0 +1,97 @@
+
+
+-- 1) Web Service Nedir ?
+
+
+Web Service ile platform bağımsız tüm cihazlara veri aktarımı gerçekleştirilir.
+Web Serviceler platform bağımsız olmak üzere bir çok uygulama, cihaz'ın iletişim kurmalarını sağlayan yapılardır.
+
+Bir web servisi, uygulamalar veya sistemler arasında veri alışverişinde kullanılan açık protokol ve standartların bir toplamıdır.
+Çeşitli programlama dillerinde yazılmış ve çeşitli platformlarda çalışan yazılım uygulamaları, internet benzeri bilgisayar ağları üzerinden,
+IIS gibi bir servis sağlayıcı tarafından tek bir bilgisayarda işlemler arası iletişim benzeri şekilde veri alışverişinde bulunmak için web servisleri kullanılır.
+Bu birlikte işlerlik (örneğin, Java ve Python veya Windows ve Linux uygulamaları arasında) açık standartların kullanımından kaynaklanmaktadır.
+
+Temel web servisleri platformu XML + HTTP‘dir. Tüm standart web servisleri bu bağlamda aşağıdaki iletişim protokollerini kullanarak çalışır.
+
+
+-- 2) SOA nedir ?
+
+Service-oriented architecture (SOA) servislerin uygulamalar oluşturmak için farklı platformlar ve diller arasında
+iletişim kurmasını sağlayan bir yazılım geliştirme modelidir. SOAP internet üzerinden küçük miktarda bilgileri yada mesajları aktarma protokoludur.
+
+SOA, bulut mimarisi içinde, bulut istemcilerinin istenen hizmetleri alması önündeki engeli kaldıran bir çeviri ve yönetim katmanı sağlar.
+SOA'nın çalışma biçimi, geliştirme ekiplerinin farklı teknolojileri kullanması gibi, kullancının bazı hedeflere ulaşmak istediği şekilde
+kombinasyon halinde gerektiği şekilde kullanabilir.
+
+SOA'da hizmetin 4 özelliği vardır,
+
+    * İş uygulamaları için kritik olan işlevsel hizmetler (yani iş hizmetleri).
+    * İşlevselliği uygulamaya hizmet eden kurumsal hizmetler. (Operarion Management)
+    * Uygulamaları geliştirmek ve dağıtmak için kullanılan uygulama hizmetleri. (Service Hosting)
+    * Güvenlik ve kimlik doğrulama gibi arka uç işlemleri için araçsal olan altyapı hizmetleri. (Security)
+
+Öncelike SOA’nın dağıtık yazılım sistemlerinin kalitesini arttırma noktasında pek çok mimari kritere sahip olduğunu söylememiz gerekir.
+Yeniden kullanılabilirlik(reusability), uyumluluk(adaptability) ve bakım yeteneği(maintainability) bunlardan birkaçıdır.
+Ancak en önemlisi SOA’nın özellikle point-to-point entegrasyon yapan sistemlerdeki bağımlılıkları ortadan kaldıracak çözümleri içermesidir.
+
+Güvenlik ve bakım(maintaining) gibi bazı farklı bakış açıları, SOA için konfigure edilebilir kavramlardır.
+Bu esneklik ilke tabanlı(policy based) olmaktan kaynaklanır ve bakım ile adapte edilebilirliği en üst seviyede kolaylaştırır.
+Bunun doğal sonucu olarak bir takım sorumlulukların geliştirme takımlarından sistem operasyon gibi IT taraflarına alınması da mümkün hale gelmektedir.
+Bu, organizasyonel anlamda sorumlulukların dağıtımı olarak düşünülebilir.
+
+İki yaklaşım arasındaki temel ayrım kapsamla ilgilidir. Basitçe ifade etmek gerekirse,
+hizmet odaklı mimari (SOA) kurumsal bir kapsama sahipken, mikro servis mimarisi bir uygulama kapsamına sahiptir.
+
+-- 3) Rest Service ?
+
+Rest, client-server arasındaki iletişimin HTTP protokolü sayesinde kolay ve hafif bir şekilde yapılmasını sağlayan bir mimaridir.
+Rest mimarisinde SOAP’da bulunan GetProduct , GetCategory gibi metotlar üzerinden iletişim kurulması yerine tüm bilgiler, URI’ler üzerinden sunulur.
+Örn : http://myserver/api/v1/products/1 gibi web linkleri düşünebiliriz.
+Restful web servisleri ise , REST mimarisi temel alınarak geliştirilmiş oldukça hafif, genişletilebilir ve basit servislerdir.
+Restful servislerin amacı client-server arasındaki veri akışını platform bağımsız olarak gerçekleştirebilmek ve veri akışını en az yükle sağlayabilmektir.
+Restful servisleri response tipi olarak JSON, HTML, XML gibi bir çok formatta çalışabilirler.
+Yapısının az yer kaplaması ve bir çok mobil platformda kullanışlı olmasından dolayı response tipi olarak JSON kullanılmaktadır.
+Restful servisleri esnek ve kolay geliştiriebilir bunun yanında dil ve platform bağımsızdırlar.
+SOAP servislerinin aksine ekstra bir kütüphaneye ihtiyaç duymadan çalışabilirler.
+Bir servisin restful olması için temel karakteristik prensipler vardır.
+
+SOAP, XML veri tipini desteklerken REST mimarisinde istenen veri türüyle işlem yapabilir.
+JSON veri tipi ile XML’den çok daha düşük boyutlarla veri tutulabildiği için REST ile daha hızlı işlem yapılabilir.
+
+Bir dile ihtiyaç duymadan HTTP methodlarıyla tasarlanabildiği için REST’i kullanması ve tasarlaması daha kolaydır.
+SOAP için birçok geliştirme aracı mevcuttur, REST için geliştirme araçlarına ihtiyaç duyulmaz, tasarlaması kolaydır.
+SOAP, XML-Scheme kullanırken REST, URI-Scheme kullanır. Yani metotlar için URI’ler tanımlanır.
+SOAP mesajları XML formatındadırlar ve genellikle HTTP(Hyper Text Transfer Protocol) protokolu(bazende TCP/IP) kullanılarak gönderilirler.
+SOAP ,XML tabanlı kullanıma mecbur bırakır. Bu konuda esnek değildir
+Güvenlik açısından SOAP, REST den daha gelişmiştir çünkü hazır yapılar bulunmaktadır.
+Dokümantasyon bakımından SOAP, REST den daha gelişmiştir ve daha fazla kaynak bulunmaktadır.
+
+
+--4) HTTP metodları
+
+HTTP, kaynaklar üzerinde gerçekleştirilecek eylemin türünü gösteren tanımlı yöntem metodlarına sahiptir.
+
+GET metodu kaynaktan veri ister ve herhangi bir yan etki oluşturmaz.
+POST metodu, sunucudan, çoğunlukla bir web formu gönderildiğinde, veritabanında bir kaynak oluşturmasını ister.
+PUT metodu, sunucudan kaynağı güncellemesini veya yoksa kaynağı oluşturmasını ister.
+DELETE metodu, kaynakların veya örneğinin veritabanından kaldırılmasını ister.
+
+HTTP yanıt durum kodları
+Bir API ile konuşurken sunucu, isteğinizin durumunu bildirmek için bir HTTP kodu gönderir.
+
+200s Successful responses
+Örn: 200 Ok GET, PUT veya POST için başarıyı temsil eden standart HTTP yanıtı.
+
+300s Redirects
+Örn: 304 Not Modified , istemcinin yanıtın zaten önbelleğinde olduğunu belirtir. Ve böylece aynı verileri tekrar aktarmaya gerek kalmaz.
+
+400s Client errors
+Örn: 400 Bad Request , sunucu istemcinin ne istediğini anlayamadığı için istemci tarafından yapılan isteğin işlenmediğini gösterir.
+
+500s Server errors
+Örn: 500 Internal Server Error, isteğin geçerli olduğunu, ancak sunucunun tamamen kafasının karıştığını ve sunucudan bazı beklenmeyen
+durumlara hizmet vermesinin istendiğini gösterir.
+
+Bir API oluşturduğunuzda, müşterilerin onu nasıl doğru kullanacaklarını öğrenmelerine ve anlamalarına yardımcı olmanız gerekir.
+Bunu yapmanın en iyi yolu, API için iyi döküman'lar sağlamaktır.
+API Documentation için kullanabileceğiniz en yaygın araçlardan biri Swagger'dır.

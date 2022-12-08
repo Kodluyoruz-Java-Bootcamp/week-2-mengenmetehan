@@ -1,0 +1,72 @@
+-- Spring framework'ün kullandığı design pattern'ler nelerdir ?
+
+
+-- 1) Singleton Pattern
+
+Singleton pattern, uygulama başına bir nesnenin yalnızca bir örneğinin var olmasını sağlayan bir mekanizmadır.
+
+Genel olarak, bir singleton nesnesi bir uygulama içinde tek üretilir.
+Spring, bir singleton nesnesini Spring IoC konteynır'ı içerisinde bir nesneyle sınırlar.
+Pratikte bu, Spring'in uygulama bağlamı başına her tür için yalnızca bir Bean oluşturacağı anlamına gelir.
+@Compenent, @Configuration anotasyonları ile işaretlenen sınıflar default olarak Singleton üretilirler, bu durumu
+değiştirmek için @Scope anotasyonu ile prototype işaretlenmelidir.
+
+
+-- 2) Factory Method Pattern
+
+Factory Method Pattern, istenen nesneyi oluşturmak için soyut bir yönteme sahip bir factory class gerektirir.
+
+Bunun için Springde sık sık kullandığımız iki sınıf vardır. ApplicationContext ve BeanFactory,
+
+Spring, bu tekniği Dependency Injection'da (DI)  kullanır.
+Temelde, Spring bir Bean konteynırını fasülye üreten bir fabrika olarak ele alır.
+Bu nedenle, Spring BeanFactory arayüzünü bir Bean konteynırının soyutlaması olarak tanımlar:
+
+getBean metodu ile her biri, Bean türü ve adı gibi metoda sağlanan ölçütlerle eşleşen bir Bean döndüren bir
+factory method olarak kabul edilir.
+
+ApplicationContext arayüzü BeanFactory interface'inden türetilmiştir,
+Spring, XML dosyası veya anotasyonlar gibi bazı yapılandırmalara dayalı bir Bean konteynırını başlatmak için bu arayüzü kullanır.
+AnnotationConfigApplicationContext gibi ApplicationContext sınıfı uygulamalarını kullanarak, BeanFactory arayüzünden
+devralınan çeşitli factory methodlar aracılığıyla Bean'ler oluşturabiliriz.
+Örneğin, AnnotationConfigApplicationContext öğesini ClassPathXmlApplicationContext gibi XML tabanlı bir yapılandırma sınıfına değiştirebiliriz.
+
+
+-- 3) Proxy Pattern
+
+Proxy kalıbı, bir nesnenin (proxy) başka bir nesneye erişimi kontrol etmesine izin veren bir tekniktir.
+Bir proxy oluşturmak için, arayüzü uygulayan nesneyi ve konuya bir ilişkin bir nesne yaratırız.
+Daha sonra öznenin yerine proxy'yi kullanabiliriz.
+Spring'de, temel Bean'e erişimi kontrol etmek için Bean'ler proxy'lenir.
+Aşadğıdaki örnekte bu yaklaşımı görüyoruz:
+
+@Service
+public class BookManager {
+
+    @Autowired
+    private BookRepository repository;
+
+    @Transactional
+    public Book create(String author) {
+        System.out.println(repository.getClass().getName());
+        return repository.create(author); // Burada repository nesnesine erişmek için izin verilir.
+    }
+}
+
+-- 4) Template Method Pattern
+
+Birçok framework'de, kodun önemli bir kısmı standart(boilerplate) koddur.
+
+Template Method Pattern, bazı eylemler için gerekli adımları tanımlayan, basmakalıp adımları uygulayan ve özelleştirilebilir
+adımları soyut olarak bırakan bir tekniktir. Türemiş sınıflar daha sonra bu soyut sınıfı uygulayabilir ve
+abstract metodları gerçekleştirererk somut bir uygulama sağlayabilir.
+
+
+-- 5) MVC pattern
+
+Model-View-Controller (MVC) bir yazılım uygulamasındaki endişeleri ayırma(seperating concern) yöntemidir.
+Prensip olarak, application logic ve controller, bilgileri kullanıcıya göstermek için kullanılan teknolojiden veya görünüm katmanından ayrılır.
+Model, controller ve view katmanları arasında bir iletişim aracıdır.
+Spring MVC, geleneksel sunuculara karşın controllers ve POJO'lar arasında hafif bağlantı sağlar.
+Bir controller, ayrı bir ViewResolver yardımıyla bir mantıksal view adı ve view seçimi döndürür.
+Bu nedenle Spring MVC controller'ları, JSP vb. farklı görüntüleme teknolojileri ile birlikte kullanılabilir.

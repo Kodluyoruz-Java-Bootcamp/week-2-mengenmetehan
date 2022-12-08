@@ -1,0 +1,5 @@
+1 - Singleton - Service paketi içerisindeki sınıflar singleton yapıldı.
+2 - Prototype - Realy ve User sınıfları prototype'dır.
+3 - Builder - BuilderPatternUser sınıfı ile User sınıfı builder pattern ile yapıldı.
+4 - Dao paketi içerisinde tanımlanan Interface ile create ve get işlemleri tek bir
+interface üzerinden yürütülerek kısmen Factory Method pattern yapıldı.

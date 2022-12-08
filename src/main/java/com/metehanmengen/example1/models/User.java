@@ -11,6 +11,7 @@ public class User {
     private String password;
     private UserType type = UserType.BASIC; // İlk oluşturmada basic, sonrasında set edilebilir.
     private final List<Blog> blogList = new ArrayList<>();
+    private final List<User> followerUserList = new ArrayList<>();
     private final List<Tag> tagList = new ArrayList<>();
     private LocalDateTime createDateTime;
 
@@ -58,9 +59,26 @@ public class User {
             }
         return false;
     }
+    public boolean deleteFollower(User user) {
+        for (User u : followerUserList)
+            if(u.getName().equals(user.getName())) {
+                followerUserList.remove(u);
+                return true;
+            }
+        return false;
+    }
+
+    public void addFollowerUser(User us){
+        followerUserList.add(us);
+    }
+
+    public List<User> getFollowerUserList() {
+        return followerUserList;
+    }
+
 
     public List<Tag> getTagList() {
-        return new ArrayList<>(tagList);
+        return tagList;
     }
 
     public void addTag(Tag tag) {

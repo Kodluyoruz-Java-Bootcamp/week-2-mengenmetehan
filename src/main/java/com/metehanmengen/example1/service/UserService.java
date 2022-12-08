@@ -23,14 +23,18 @@ public class UserService {
         return userRepository.getAllUser();
     }
 
-    public List<User> getAllFollower()
+    public List<User> getAllFollower(User user)
     {
-        return userRepository.getAllFollower();
+        return userRepository.getAllFollowerUser(user);
+    }
+    public void addFollowerUser(User follower, User following)
+    {
+        userRepository.addFollowerUser(follower, following);
     }
 
     public void deleteUser(User user)
     {
-        userRepository.delete(user);
+        userRepository.deleteUser(user);
     }
 
     public void printAllUser()

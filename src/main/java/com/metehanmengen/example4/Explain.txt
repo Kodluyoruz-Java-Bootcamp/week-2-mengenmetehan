@@ -1,0 +1,45 @@
+-- Java dünyasındaki frameworkler ve çözdükleri problemler neir ? Kod Örnekleri ile açıklayınız .
+
+
+Framework nedir ?
+
+Frameworkler birden çok Api ve kütüphanelere sahiptirler ve bir sistemin framework olarak adlandırılabilmesi için
+2 özelliğin o sistemde bulunması yönünde bir eğilim vardır.
+
+    - Kod akışının ele geçirilmesi ve duruma göre programcıya belirli zamanlarda verilmesi. (Inversion of Control)
+    - Karmaşıklığın programcıya daha basit gösterilmesi, detayların yani yük olan bazı işlemlerin programcının kontrolünden
+    alınması.
+
+-- Spring Framework
+
+Spring açık kaynak kodlu, Java tabanlı bir framework'tür. Bazı web uygulamalarını oluşturmak için kullanılır.
+Son sürümü 6.0 dır. XML dosyalası ile yapılandırılır(configuration).
+Spring içerisinde ApplicationContext ve BeanFactory sınıfları ile IoC (inversion of control) türleri bulunmaktadır.
+(Spring core konteynır'ları).
+Bean bu konteynır içerisinde yapılandırılmış en küçük nesnedir.
+Bean eklemek (dependency injection yöntemi olarak) için field, set ve constructor injection işlemleri yapılabilir ama tavsiye edilen consructor injection'dır.
+Diğerleri immutablety problemi oluşturur.
+
+
+-- Spring Boot
+Spring Boot uygulama  oluşturma sürecini daha elverişli hale getirmeyi hedefleyen bir Spring sürümüdür.
+Basma kalıp yapılandırma işlemlerini kolaylaştırmıştır.
+Son sürümü 3.0'dır
+Spring Boot'ta anatasyonlar ile işetlenen elemanlar ile Spring Boot çalışma zamanı sırasında o anatasyonlara bakıp ona
+göre işlem yapar. Örneğin @scope anatasyonu ile bir nesne singleton veya prototype yaratılabilir.
+@autowire ile @bean'i nereye bağlamak istersek belirtiyoruz, tek constructor'lı sınıflarda autowired yazmaya gerek yok.
+@RequestMapping ile Http yöntemini kullanarak özel bir class'a erişilir, metot ve class'ta kullanılabilir.REST işlemlerinde
+kullanırız.
+
+-- Hibernate
+
+Hibernate ORM , Java (ORM)nesne-ilişkisel eşleme framework'üdür.
+Java programlama dili ile ilişkisel veri tabanı yönetim sistemleri (RDBMS) arasında daha iyi iletişimi mümkün kılar.
+Java ile RDBMS'lerin verileri farklı şekilde işlemesi ciddi uyumsuzluk sorunlarına yol açabilir.
+Hibernate, Java'nın bu uyuşmazlık problemlerinin üzerinden gelmemizi sağlar.
+
+-- JSF
+
+JavaServer Faces, Java tabanlı web uygulamaları için kullanıcı arayüzleri oluşturmak üzere Oracle tarafından geliştirilmiştir.
+Bileşen tabanlı bir UI framework'üdür.
+JSF, MVC yazılım tasarım modeline dayalıdır ve uygulama mantığı ile temsil(model) arasındaki ayrımı tamamen tanımlayan bir mimariye sahiptir.

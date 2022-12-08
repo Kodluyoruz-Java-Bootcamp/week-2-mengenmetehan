@@ -20,12 +20,12 @@ public class BlogService {
 
     public void deleteBlog(Blog blog)
     {
-        blogRepository.delete(blog);
+        blogRepository.deleteBlog(blog);
     }
 
     public void updateBlog(Blog blog)
     {
-        blogRepository.update(blog);
+        blogRepository.updateBlog(blog);
     }
 
     public List<Blog> getAll()

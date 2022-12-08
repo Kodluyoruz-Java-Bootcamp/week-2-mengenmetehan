@@ -83,6 +83,25 @@ public class Test1 {
 
         System.out.println("----------------------------------------");
 
+        // Takipleşmeler
+
+        userService.addFollowerUser(mete, mehmet);
+        userService.addFollowerUser(ahmet, mete);
+        userService.addFollowerUser(zeynep, ayşe);
+        userService.addFollowerUser(ayşe, ahmet);
+        userService.addFollowerUser(mete, zeynep);
+        userService.addFollowerUser(zeynep, mete);
+        userService.addFollowerUser(ahmet, ahmet);
+        userService.addFollowerUser(mete, mete);
+
+        System.out.println("## Mete'yi blog'da takip edenler");
+        userService.getAllFollower(mete).stream().forEach(System.out::println);
+
+        System.out.println("## Zeynep'i blog'da takip edenler");
+        userService.getAllFollower(zeynep).stream().forEach(System.out::println);
+
+
+
         //Tag'ler oluşturuldu.
         Tag tagRestService = new Tag("Rest Service", "Sofware Development");
         Tag tagDocker = new Tag("Docker", "Sofware Development");

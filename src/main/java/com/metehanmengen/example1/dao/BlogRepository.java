@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BlogRepository {
-    private static List<Blog> blogList = new ArrayList<>();
+    private List<Blog> blogList = new ArrayList<>();
 
     public void saveBlog(Blog blog)
     {
@@ -16,12 +16,10 @@ public class BlogRepository {
 
     public List<Blog> getAll()
     {
-        List<Blog> blogs = new ArrayList<>(blogList); //Dizinin kopyası veriliyor.
-
-        return blogs;
+        return blogList;
     }
 
-    public void delete (Blog blog)
+    public void deleteBlog(Blog blog)
     {
         if (blogList.remove(blog))
             System.out.printf("%s isimli blog silindi", blog);
@@ -29,7 +27,7 @@ public class BlogRepository {
             System.out.println("Blog bulunamadı");
     }
 
-    public boolean update (Blog blog)
+    public boolean updateBlog(Blog blog)
     {
         for(Blog b : blogList)
             if (b.getName().equals(blog.getName())) {

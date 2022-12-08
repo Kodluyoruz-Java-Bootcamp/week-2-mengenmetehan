@@ -3,42 +3,44 @@ package src.main.java.com.metehanmengen.example1.dao;
 import src.main.java.com.metehanmengen.example1.models.User;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserRepository {
-    private static final List<User> userList = new ArrayList<>();
-    private static final List<User> followerList = new ArrayList<>();
+    private final List<User> userList = new ArrayList<>();
+
     public void saveUser(User user)
     {
         if (user != null)
             userList.add(user);
     }
 
-    public void followUser(User user)
+    public void addFollowerUser(User follower, User following)
     {
-        if (user != null)
-            followerList.add(user);
+        if (userList.contains(follower))
+            follower.addFollowerUser(following);
     }
+
     public List<User> getAllUser()
     {
-        List<User> users = new ArrayList<>(userList); //Dizinin kopyası veriliyor.
-
-        return users;
+        return userList;
     }
 
-    public List<User> getAllFollower()
+    public List<User> getAllFollowerUser(User user)
     {
-        List<User> users = new ArrayList<>(followerList); //Dizinin kopyası veriliyor.
-
-        return users;
+        if(userList.contains(user))
+            return user.getFollowerUserList();
+        return null;
     }
 
-    public void delete (User user)
+
+    public void deleteUser(User user)
     {
         if (userList.remove(user))
-            System.out.printf("%s isimli blog silindi", user);
+            System.out.printf("%s isimli kullanıcı", user);
         else
-            System.out.println("Blog bulunamadı");
+            System.out.println("Kullanıcı bulunamadı");
     }
 
     public boolean updatePassword(User user, String password)
