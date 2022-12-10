@@ -11,7 +11,7 @@ public class Realty {
 	private RealtyAccountType status;
 
 	private RealtyType type;
-	private String province;
+	private ProvinceNames province = ProvinceNames.ISTANBUL;
 	private String district;
 
 	/*
@@ -68,11 +68,12 @@ public class Realty {
 		this.status = status;
 	}
 
-	public String getProvince() {
+
+	public ProvinceNames getProvince() {
 		return province;
 	}
 
-	public void setProvince(String province) {
+	public void setProvince(ProvinceNames province) {
 		this.province = province;
 	}
 

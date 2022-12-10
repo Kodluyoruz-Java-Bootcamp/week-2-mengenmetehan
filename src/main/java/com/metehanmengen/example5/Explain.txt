@@ -19,7 +19,7 @@ Factory Method Pattern, istenen nesneyi oluşturmak için soyut bir yönteme sah
 Bunun için Springde sık sık kullandığımız iki sınıf vardır. ApplicationContext ve BeanFactory,
 
 Spring, bu tekniği Dependency Injection'da (DI)  kullanır.
-Temelde, Spring bir Bean konteynırını fasülye üreten bir fabrika olarak ele alır.
+Temelde, Spring bir Bean konteynırını Bean üreten bir fabrika olarak ele alır.
 Bu nedenle, Spring BeanFactory arayüzünü bir Bean konteynırının soyutlaması olarak tanımlar:
 
 getBean metodu ile her biri, Bean türü ve adı gibi metoda sağlanan ölçütlerle eşleşen bir Bean döndüren bir
